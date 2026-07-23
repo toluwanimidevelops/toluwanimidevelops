@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Scrollable from "./components/Scrollable";
 import About from "./components/About";
+import Experience from "./components/Experience";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Header />
           <Scrollable />
           <About />
+          <Experience />
         </div>
       </Nav>
     </div>

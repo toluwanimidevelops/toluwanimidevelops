@@ -1,5 +1,6 @@
 import React from "react";
-
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { MdArrowOutward } from "react-icons/md";
 const Header = () => {
   return (
     <div className="min-h-screen mt-5 w-full flex flex-wrap justify-between gap-x-20 gap-4 ">
@@ -28,9 +29,10 @@ const Header = () => {
         <div className=" flex justify-start flex-wrap mt-3 items-center gap-4">
           <a
             href=""
-            className="cursor-pointer bg-blue-700 text-sm w-fit block px-5 tracking-widest font-primary uppercase py-3 rounded-full"
+            className="cursor-pointer flex gap-3 justify-center items-center  bg-blue-700 text-sm w-fit  px-5 tracking-widest font-primary uppercase py-3 rounded-full"
           >
             Start A Project
+            <IoIosArrowRoundForward size={20} />
           </a>
           <a
             href=""
@@ -41,9 +43,9 @@ const Header = () => {
           <a
             href="/toluresume.pdf"
             target="_blank"
-            className="text-[#b0b0b5] font-primary uppercase"
+            className="text-[#b0b0b5] flex justify-center items-center  font-primary uppercase"
           >
-            Résumé
+            Résumé <MdArrowOutward size={20} />
           </a>
         </div>
         <div className="border max-w-4xl my-8 w-full border-[#b0b0b5]/20 overflow-hidden  rounded-lg min-h-24 flex flex-wrap justify-between">
@@ -73,8 +75,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-          <div className=" w-100 bg-blue-700 rounded-2xl h-150 mt-20"></div>
-         
+      <div className=" w-100 bg-blue-700 rounded-2xl h-150 mt-20"></div>
     </div>
   );
 };

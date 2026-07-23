@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Nav = ({ children }) => {
   const navLinks = [
@@ -57,8 +58,8 @@ const Nav = ({ children }) => {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-5">
-          <button className="px-7 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 bg-white text-gray-900 font-primary uppercase tracking-[2px] hover:bg-gray-100">
-            Hire me
+          <button className="px-5 cursor-pointer py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 bg-white text-gray-900 font-primary uppercase tracking-[2px] hover:bg-gray-100 flex justify-center items-center gap-1">
+            Hire me <IoIosArrowRoundForward size={20} />
           </button>
         </div>
 
