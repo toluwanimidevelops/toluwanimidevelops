@@ -87,11 +87,11 @@ const ExperienceCard = ({
       </p>
     </div>
     <div className="col-span-12 md:col-span-5">
-      <p className="text-ink-700 text-sm leading-relaxed">{description}</p>
+      <p className="text-ink-700 text-sm text-[#7f8a95] font-main leading-relaxed">{description}</p>
     </div>
     <div className="col-span-12 md:col-span-2 md:text-right font-mono text-[11px] uppercase tracking-[0.16em] text-ink-700">
-      <div>{period}</div>
-      <div className="text-ink-500 mt-0.5">{type}</div>
+      <div className="">{period}</div>
+      <div className=" mt-0.5">{type}</div>
     </div>
   </motion.li>
 );
