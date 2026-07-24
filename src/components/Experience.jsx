@@ -76,7 +76,7 @@ const ExperienceCard = ({
       </p>
     </div>
     <div className="col-span-12 md:col-span-5">
-      <p className="text-ink-700 text-sm text-[#b0b0b5] font-main leading-relaxed">
+      <p className=" text-sm text-[#b0b0b5] font-main leading-relaxed">
         {description}
       </p>
     </div>

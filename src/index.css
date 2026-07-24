@@ -1,7 +1,7 @@
 /* 1. All @import directives MUST be at the top */
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 /* 2. Local Font Definitions */
 @font-face {
   font-family: "SpaceGroteskLight";
@@ -18,7 +18,10 @@
   font-style: normal;
   font-display: swap;
 }
-
+@font-face {
+  font-family: "Instrument";
+  src: url("/fonts/InstrumentSerif-Regular.ttf");
+}
 @font-face {
   font-family: "SpaceGroteskMedium";
   src: url("/fonts/SpaceGrotesk-Medium.ttf") format("truetype");
@@ -48,7 +51,7 @@
   --font-primary: "JetBrains Mono", monospace;
   --font-main: "Poppins", sans-serif;
   --font-secondary: "SpaceGroteskSemiBold", sans-serif;
-  --font-instrument: "Instrument Serif", serif;
+  --font-instrument: "Instrument", serif;
   /* You can also map all weights under custom utility names */
   --font-space-light: "SpaceGroteskLight", sans-serif;
   --font-space-regular: "SpaceGroteskRegular", sans-serif;
