@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 // --- Animation Variants ---
@@ -26,42 +25,32 @@ const staggerList = {
 const EXPERIENCES = [
   {
     number: "01",
-    role: "Junior Software Engineer",
-    company: "Northsnow",
+    role: "Junior Fullstack Software Engineer",
+    company: "Northsnow Ltd Uk",
     description:
-      "Leading engineering and product delivery architecture, team direction, and shipping scalable systems end to end.",
-    period: "Jan 2026 — June 2026",
-    type: "Full-time Remote",
+      "Developed scalable MERN stack web apps, built cross-platform React Native mobile apps, and integrated secure RESTful APIs in an agile remote environment.",
+    period: "Jan 2026 — Present",
+    type: "Remote",
   },
   {
     number: "02",
-    role: "Lead Frontend Engineer",
-    company: "Mansior",
+    role: "Junior Frontend Software Engineer",
+    company: "Breedware",
     description:
-      "Led the frontend for a real estate platform: escrow, AI-assisted search, and in-app messaging at scale.",
-    period: "Jun 2024 — 2026",
-    type: "Full-time",
+      "Built responsive web applications in React and cross-platform mobile apps using React Native, crafting modular UI with Tailwind CSS and integrating backend APIs.",
+    period: "Nov 2025 — Mar 2026",
+    type: "Full Time",
   },
   {
     number: "03",
-    role: "Fullstack Developer",
-    company: "Freelance",
+    role: "Frontend Intern (React)",
+    company: "Moniways",
     description:
-      "Shipped web and mobile products for clients across multiple industries, end to end.",
-    period: "Dec 2023 — Jun 2024",
-    type: "Contract",
-  },
-  {
-    number: "04",
-    role: "Frontend Developer",
-    company: "Ajian Labs",
-    description:
-      "Built product interfaces and design systems for early-stage ventures.",
-    period: "Jan 2023 — Nov 2023",
-    type: "Part-time",
+      "Collaborated with senior engineers to develop interactive web apps in React, building clean, reusable frontend components for a modular codebase.",
+    period: "Jan 2023 — Dec 2024",
+    type: "Remote",
   },
 ];
-
 // --- Sub-Component ---
 const ExperienceCard = ({
   number,
@@ -82,16 +71,18 @@ const ExperienceCard = ({
       <h3 className="font-secondary text-xl md:text-2xl font-semibold text-ink-950 tracking-tight text-white">
         {role}
       </h3>
-      <p className="mt-1 text-ink-700 text-sm text-[#798693] font-main">
+      <p className="mt-1 text-ink-700 text-sm text-[#b0b0b5] font-main">
         {company}
       </p>
     </div>
     <div className="col-span-12 md:col-span-5">
-      <p className="text-ink-700 text-sm text-[#7f8a95] font-main leading-relaxed">{description}</p>
+      <p className="text-ink-700 text-sm text-[#b0b0b5] font-main leading-relaxed">
+        {description}
+      </p>
     </div>
-    <div className="col-span-12 md:col-span-2 md:text-right font-mono text-[11px] uppercase tracking-[0.16em] text-ink-700">
-      <div className="">{period}</div>
-      <div className=" mt-0.5">{type}</div>
+    <div className="col-span-12 md:col-span-2 md:text-right font-primary  text-[11px] uppercase tracking-[0.16em]">
+      <div className="text-[#b0b0b5]">{period}</div>
+      <div className=" text-[#b0b0b5]/50">{type}</div>
     </div>
   </motion.li>
 );

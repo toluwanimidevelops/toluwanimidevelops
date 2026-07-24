@@ -3,8 +3,8 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Nav = ({ children }) => {
   const navLinks = [
-    { name: "About", path: "/" },
-    { name: "Work", path: "/" },
+    { name: "About", path: "/#about" },
+    { name: "Work", path: "/#work" },
     { name: "Stack", path: "/" },
     { name: "Projects", path: "/" },
     { name: "Contact", path: "/" },
