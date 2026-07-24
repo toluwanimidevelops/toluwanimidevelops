@@ -161,8 +161,10 @@ const Header = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className=" w-100 bg-blue-700 rounded-2xl h-150 mt-20"
-      ></motion.div>
+        className=" w-100 bg-blue-700 rounded-2xl overflow-hidden h-150 mt-20"
+      >
+        <img src="/myprofile.jpeg" className="w-full h-full object-cover object-center" alt="" />
+      </motion.div>
     </motion.div>
   );
 };
