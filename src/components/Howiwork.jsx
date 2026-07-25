@@ -101,8 +101,8 @@ const HowIWork = () => {
           <motion.img
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.4 }}
-            src="/myprofile.jpeg"
-            alt="Profile picture"
+            src="/thebuild.jpeg"
+            alt="The Build picture"
             className="h-full w-full object-cover object-center"
           />
         </motion.div>
