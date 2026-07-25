@@ -81,14 +81,14 @@ const HowIWork = () => {
       </motion.header>
 
       {/* Content Section */}
-      <div className="flex py-15 flex-wrap justify-center w-full gap-5">
+      <div className="flex py-15 flex-wrap justify-center w-full gap-5 ">
         {/* Profile Image Box */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-lg max-lg:w-87.5 max-md:w-full max-w-full  border border-[#bebec4]/10 relative h-175 overflow-hidden rounded-2xl group"
+          className="w-lg max-lg:w-87.5 max-md:w-full max-w-full max-md:order-1  border border-[#bebec4]/10 relative h-175 overflow-hidden rounded-2xl group"
         >
           <div className="flex justify-between absolute w-full px-5 bottom-2 z-10">
             <p className="font-primary text-white bg-[#0a0a0b]/50 border border-[#bebec4]/10 backdrop-blur-md rounded-xl text-xs tracking-wide leading-0 flex justify-center items-center px-3 py-3">

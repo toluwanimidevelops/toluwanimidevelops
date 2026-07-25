@@ -1,5 +1,81 @@
 import { motion } from "framer-motion";
 
+// --- Data Structure ---
+const skillsData = [
+  {
+    title: "Design & Brand",
+    number: "01",
+    list: ["UI/UX", "Figma", "Branding", "Visual Identity", "Design Systems"],
+  },
+  {
+    title: "Languages",
+    number: "02",
+    list: ["JavaScript", "TypeScript", "HTML 5", "CSS 3", "Python"],
+  },
+  {
+    title: "Frameworks & Libraries",
+    number: "03",
+    list: [
+      "Next.js",
+      "React",
+      "React Native",
+      "Expo",
+      "Node.js",
+      "Express",
+      "Socket.io",
+    ],
+  },
+  {
+    title: "Styling & UI",
+    number: "04",
+    list: [
+      "Tailwind Css",
+      "Shadcn",
+      "Bootstrap",
+      "Framer Motion",
+      "CSS Modules",
+      "Express",
+    ],
+  },
+  {
+    title: "Storage & Data",
+    number: "05",
+    list: ["Redux", "MongoDB", "Firebase", "React Context"],
+  },
+  {
+    title: "Test & Quality",
+    number: "06",
+    list: ["Jest"],
+  },
+  {
+    title: "Infra and Tooling",
+    number: "07",
+    list: [
+      "Vercel",
+      "Git and Github",
+      "Github Actions",
+      "Docker",
+      "Postman",
+      "npm/pnpm",
+      "EsLint",
+      "Onrender",
+    ],
+  },
+
+  {
+    title: "Practice",
+    number: "08",
+    list: [
+      "Problem Solving",
+      "Team Collaboration",
+      "Responsive and Cross Browser",
+      "Accessibility",
+      "Performance",
+      "Technical writing",
+    ],
+  },
+];
+
 // --- Animation Variants ---
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -7,40 +83,63 @@ const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.15,
-      delayChildren: 0.1,
     },
   },
 };
 
-const itemVariants = {
+const cardVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.215, 0.61, 0.355, 1], // Smooth cubic-bezier
-    },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
-const SkillsCard = ({ number, title, subTitle }) => {
+const chipVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.3 },
+  },
+};
+
+// --- Components ---
+const SkillsChip = ({ text }) => {
+  return (
+    <motion.span
+      variants={chipVariants}
+      className="font-primary text-nowrap rounded-full px-3 py-1 text-[14px]  text-[#b0b0b5] bg-gradient-to-b font-main from-[#0f0f10] to-transparent border border-[#b0b0b5]/20 transition-colors duration-300 hover:border-blue-700/20 hover:text-white hover:from-blue-600/10 cursor-pointer"
+    >
+      {text}
+    </motion.span>
+  );
+};
+
+const SkillCard = ({ title, number, list }) => {
   return (
     <motion.div
-      variants={itemVariants}
-      whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className="w-full p-7 max-md:gap-5 gap-10 rounded-2xl bg-gradient-to-b from-[#0f0f10] to-transparent border border-[#b0b0b5]/20 transition-all duration-500 hover:border-blue-700 hover:from-blue-600/20 hover:to-transparent cursor-pointer flex"
+      variants={cardVariants}
+      className="bg-gradient-to-b from-[#0f0f10] to-transparent p-6 rounded-2xl border border-[#b0b0b5]/20 transition-all duration-500 hover:border-blue-700 hover:from-blue-600/10 hover:to-transparent cursor-pointer flex flex-col justify-between"
     >
-      <h1 className="text-2xl max-md:text-xl font-primary text-blue-700">
-        {number}
-      </h1>
-      <div className="flex-1 flex flex-col gap-px">
-        <h1 className="font-secondary text-xl max-md:text-lg text-white">
-          {title}
-        </h1>
-        <p className="text-[#b0b0b5] font-main leading-relaxed max-lg:text-md max-md:text-sm">
-          {subTitle}
-        </p>
+      <div>
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="font-secondary text-lg text-white font-medium">
+            {title}
+          </h3>
+          <p className="font-primary text-blue-700 text-xs font-medium">
+            {number}
+          </p>
+        </div>
+        <motion.div
+          variants={containerVariants}
+          className="flex flex-wrap gap-2 max-w-xs"
+        >
+          {list?.map((item, index) => (
+            <SkillsChip key={index} text={item} />
+          ))}
+        </motion.div>
       </div>
     </motion.div>
   );
@@ -51,13 +150,7 @@ const Skills = () => {
   return (
     <div id="work" className="mt-20 md:mt-36">
       {/* Header Section */}
-      <motion.header
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-[#b0b0b5]/20 pt-6 md:pt-8"
-      >
+      <header className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-[#b0b0b5]/20 pt-6 md:pt-8">
         <div className="col-span-12 md:col-span-3 flex items-center gap-3">
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-blue-700 text-blue-700 font-primary text-[10px]">
             04
@@ -78,9 +171,25 @@ const Skills = () => {
             tool for the business goal, not the trend.
           </p>
         </div>
-      </motion.header>
+      </header>
 
       {/* Content Section */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 my-12 grid-cols-1"
+      >
+        {skillsData.map((skill) => (
+          <SkillCard
+            key={skill.number}
+            title={skill.title}
+            number={skill.number}
+            list={skill.list}
+          />
+        ))}
+      </motion.div>
     </div>
   );
 };
