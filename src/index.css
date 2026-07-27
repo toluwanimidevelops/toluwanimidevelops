@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
 /* 2. Local Font Definitions */
 @font-face {
   font-family: "SpaceGroteskLight";
@@ -18,10 +19,12 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Instrument";
   src: url("/fonts/InstrumentSerif-Regular.ttf");
 }
+
 @font-face {
   font-family: "SpaceGroteskMedium";
   src: url("/fonts/SpaceGrotesk-Medium.ttf") format("truetype");
@@ -52,7 +55,6 @@
   --font-main: "Poppins", sans-serif;
   --font-secondary: "SpaceGroteskSemiBold", sans-serif;
   --font-instrument: "Instrument", serif;
-  /* You can also map all weights under custom utility names */
   --font-space-light: "SpaceGroteskLight", sans-serif;
   --font-space-regular: "SpaceGroteskRegular", sans-serif;
   --font-space-medium: "SpaceGroteskMedium", sans-serif;
@@ -60,9 +62,43 @@
   --font-space-bold: "SpaceGroteskBold", sans-serif;
 }
 
-/* 4. Global Styles */
+/* 4. Custom Scrollbar Styles */
+/* Firefox Support (Firefox naturally omits arrows on custom scrollbars) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-blue-700) #0a0a0b;
+}
+
+/* Webkit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* ❌ Hides the up/down stepper arrows */
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0b; /* Matches your dark body background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-blue-700); /* Tailwind v4 blue-700 */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue-600); /* Slightly lighter blue on hover */
+}
+
+/* 5. Global Styles */
 body {
   background-color: #0a0a0b;
+  scroll-behavior: smooth;
   font-family: var(--font-main);
 }
 

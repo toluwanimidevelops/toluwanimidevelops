@@ -125,7 +125,7 @@ const SkillCard = ({ title, number, list }) => {
     >
       <div>
         <div className="flex justify-between items-center mb-3">
-          <h3 className="font-secondary text-lg text-white font-medium">
+          <h3 className="font-secondary text-[16px] text-white font-medium">
             {title}
           </h3>
           <p className="font-primary text-blue-700 text-xs font-medium">

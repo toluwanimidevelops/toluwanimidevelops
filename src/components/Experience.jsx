@@ -71,7 +71,7 @@ const ExperienceCard = ({
       <h3 className="font-secondary text-xl md:text-2xl font-semibold text-ink-950 tracking-tight text-white">
         {role}
       </h3>
-      <p className="mt-1 text-ink-700 text-sm text-[#b0b0b5] font-main">
+      <p className="mt-1  text-sm text-[#b0b0b5] font-main">
         {company}
       </p>
     </div>
