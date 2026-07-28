@@ -71,17 +71,17 @@ const Cta = () => {
     {
       label: "Github",
       username: "Toluwani Develops",
-      url: "https://github.com/Tolu1280211",
+      url: "https://github.com/toluwanimidevelops",
     },
     {
       label: "Linkedin",
       username: "Toluwanimi Oladoja",
-      url: "https://linkedin.com/in/yourprofile",
+      url: "https://linkedin.com/in/toluwanimi-oladoja-220092388/",
     },
     {
       label: "Whatsapp",
       username: "Message me",
-      url: "https://wa.me/yourphonenumber",
+      url: "https://wa.link/8v5ygy",
     },
   ];
 
@@ -107,7 +107,7 @@ const Cta = () => {
   };
 
   return (
-    <section id="work" className="mt-20 md:mt-36 max-w-full mx-auto ">
+    <section id="contact" className="mt-20 md:mt-36 max-w-full mx-auto ">
       {/* Header Section */}
       <motion.header
         initial={{ opacity: 0, y: 20 }}

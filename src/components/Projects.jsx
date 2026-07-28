@@ -91,7 +91,7 @@ const ProjectCard = ({
 // --- Main Component ---
 const Project = () => {
   return (
-    <section id="work" className="mt-20 md:mt-36">
+    <section id="project" className="mt-20 md:mt-36">
       {/* Header Section */}
       <motion.header
         initial={{ opacity: 0, y: 20 }}
@@ -100,7 +100,7 @@ const Project = () => {
         transition={{ duration: 0.6 }}
         className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-[#b0b0b5]/20 pt-6 md:pt-8"
       >
-        <div className="col-span-12 md:col-span-3 flex items-center gap-3">
+        <div className=" col-span-12 md:col-span-3 flex items-center gap-3">
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-blue-700 text-blue-700 font-primary text-[10px]">
             05
           </span>

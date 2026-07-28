@@ -145,7 +145,7 @@ const About = () => {
             <p>
               Over the years, I’ve architected and delivered robust web
               platforms, cross-platform mobile apps, and custom digital systems
-              for fast-growing ventures across fintech, real estate, and SaaS. I
+              for fast-growing ventures across real estate, and SaaS. I
               don't just write clean code; I engineer scalable digital products
               that acquire users, streamline operations, and drive measurable
               business revenue.

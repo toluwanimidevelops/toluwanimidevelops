@@ -148,7 +148,7 @@ const SkillCard = ({ title, number, list }) => {
 // --- Main Component ---
 const Skills = () => {
   return (
-    <div id="work" className="mt-20 md:mt-36">
+    <div id="stack" className="mt-20 md:mt-36">
       {/* Header Section */}
       <header className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-[#b0b0b5]/20 pt-6 md:pt-8">
         <div className="col-span-12 md:col-span-3 flex items-center gap-3">
