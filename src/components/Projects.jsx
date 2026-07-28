@@ -153,7 +153,7 @@ const Project = () => {
           year="2025"
           thing="Engineer & Designer"
           title="Guest 'n' Host"
-          link="https://trueworshipglobal.org"
+          link="https://www.guestsnhost.com/"
           description="Collaborated with a developer to build key user-facing pages and components for the website."
           languages={["HTML 5", "Tailwind CSS"]}
         />
