@@ -111,7 +111,7 @@ const Project = () => {
         <div className="col-span-12 md:col-span-9">
           <h2 className="font-secondary font-semibold text-3xl md:text-5xl mb-3 lg:text-[3.4rem] leading-[1.03] tracking-tight text-white text-balance">
             Products Shipped &{" "}
-            <span className="font-instrument tracking-tighter italic text-blue-700">
+            <span className="font-instrument lowercase tracking-tighter italic text-blue-700">
               Code Deployed
             </span>
           </h2>

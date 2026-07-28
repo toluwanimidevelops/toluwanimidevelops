@@ -1,39 +1,109 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Cta = () => {
   const [copied, setCopied] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
   const textToCopy = "oladojatolu@gmail.com";
+
   const handleCopy = async () => {
     try {
-      // Modern browser Clipboard API
       await navigator.clipboard.writeText(textToCopy);
-
-      // Trigger user feedback
       setCopied(true);
-
-      // Reset button text after 2 seconds
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here (e.g., API call, EmailJS, Formspree)
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({ email: "", subject: "", message: "" });
+    }, 4000);
+  };
+
+  const socialLinks = [
+    {
+      label: "Twitter",
+      username: "@Tolu1280211",
+      url: "https://x.com/Tolu1280211",
+    },
+    {
+      label: "Github",
+      username: "Toluwani Develops",
+      url: "https://github.com/Tolu1280211",
+    },
+    {
+      label: "Linkedin",
+      username: "Toluwanimi Oladoja",
+      url: "https://linkedin.com/in/yourprofile",
+    },
+    {
+      label: "Whatsapp",
+      username: "Message me",
+      url: "https://wa.me/yourphonenumber",
+    },
+  ];
+
+  // Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section id="work" className="mt-20 md:mt-36">
+    <section id="work" className="mt-20 md:mt-36 max-w-7xl mx-auto ">
       {/* Header Section */}
-      <header className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-[#b0b0b5]/20 pt-6 md:pt-8">
+      <motion.header
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-[#b0b0b5]/20 pt-6 md:pt-8"
+      >
         <div className="col-span-12 md:col-span-3 flex items-center gap-3">
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-blue-700 text-blue-700 font-primary text-[10px]">
             05
           </span>
           <span className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]">
-            Projects
+            Contact Us
           </span>
         </div>
         <div className="col-span-12 md:col-span-9">
           <h2 className="font-secondary font-semibold text-3xl md:text-5xl mb-3 lg:text-[3.4rem] leading-[1.03] tracking-tight text-white text-balance">
             Have something worth building? <br />
-            <span className="font-instrument tracking-tighter italic text-blue-700">
+            <span className="font-instrument lowercase tracking-tighter italic text-blue-700">
               Let's talk.
             </span>
           </h2>
@@ -42,42 +112,151 @@ const Cta = () => {
             reply within a day, most days.
           </p>
         </div>
-      </header>
-      <header className="grid mt-6 md:mt-8 grid-cols-4 justify-between    border-t border-[#b0b0b5]/20 pt-6 md:pt-8">
-        <div className="col-span-1">
-          <p className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]">
-            Direct
-          </p>
-          <div className="flex gap-4 items-end">
-            <a
-              href="mailto:oladojatolu@gmail.com"
-              className="block font-secondary text-white text-[20px] max-sm:text-[19px] md:text-[30px] underline"
-            >
-              oladojatolu@gmail.com
-            </a>
-            <p
-              onClick={handleCopy}
-              className=" font-primary mb-2 max-sm:mb-0 cursor-pointer text-[14px] uppercase text-blue-700"
-            >
-              {copied ? "Copied" : "Copy"}
-            </p>
-          </div>
-          <p className="font-primary pt-6 md:pt-8 text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]">
-            Elsewhere
-          </p>
+      </motion.header>
+
+      {/* Main Content: Info & Form */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-12 gap-8 mt-10 md:mt-12 border-t border-[#b0b0b5]/20 pt-8 md:pt-12"
+      >
+        {/* Left Column: Direct Info & Social Links */}
+        <motion.div
+          variants={itemVariants}
+          className="col-span-12 lg:col-span-5 flex flex-col gap-8"
+        >
+          {/* Direct Email */}
           <div>
-            <section className="flex items-center gap-2">
-              <p className="font-primary pt-6 md:pt-8 text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]">
-                Twitter
-              </p>
-              <a className="leading-0" href="https://x.com/Tolu1280211">
-                Toluwanimi Develops
+            <p className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em] mb-3">
+              Direct
+            </p>
+            <div className="flex items-baseline gap-4 flex-wrap">
+              <a
+                href="mailto:oladojatolu@gmail.com"
+                className="font-secondary  text-white text-3xl max-sm:text-xl  underline underline-offset-8 hover:underline-offset-4 transition-all duration-300"
+              >
+                oladojatolu@gmail.com
               </a>
-            </section>
+              <button
+                onClick={handleCopy}
+                className="font-primary cursor-pointer text-[12px]  uppercase tracking-wider text-blue-700  transition-colors"
+              >
+                {copied ? "Copied!" : "Copy"}
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="col-span-2"></div>
-      </header>
+
+          {/* Social Links */}
+          <div className="mt-4">
+            <p className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em] mb-4">
+              Elsewhere
+            </p>
+            <div className="flex flex-col gap-3">
+              {socialLinks.map((link) => (
+                <div
+                  key={link.label}
+                  className="grid grid-cols-12 items-center gap-2 max-w-md"
+                >
+                  <span className="col-span-2 max-sm:col-span-3 font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]">
+                    {link.label}
+                  </span>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="col-span-8 inline-flex items-center gap-1 text-white font-main text-base underline underline-offset-4  transition-colors w-fit"
+                  >
+                    {link.username} ↗
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right Column: Interactive Form */}
+        <motion.div
+          variants={itemVariants}
+          className="col-span-12 max-w-full lg:col-span-7"
+        >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Email Input */}
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor="email"
+                  className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]"
+                >
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="you@company.com"
+                  className="bg-transparent border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus:border-white transition-colors max-w-full font-main"
+                />
+              </div>
+
+              {/* Subject Input */}
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor="subject"
+                  className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  placeholder="A role, a project, a hello"
+                  className="bg-transparent border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus:border-white transition-colors font-main"
+                />
+              </div>
+            </div>
+
+            {/* Message Input */}
+            <div className="flex flex-col gap-2 mt-2">
+              <label
+                htmlFor="message"
+                className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder="Tell me a bit about what you're working on."
+                className="bg-transparent border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus:border-white transition-colors resize-none font-main"
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
+            <div className="mt-4">
+              <button
+                type="submit"
+                className="cursor-pointer flex gap-3 justify-center items-center  bg-blue-700 text-sm w-fit  px-5 tracking-widest font-primary uppercase py-3 rounded-full"
+              >
+                Submit
+                <IoIosArrowRoundForward size={20} />
+              </button>
+            </div>
+          </form>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
