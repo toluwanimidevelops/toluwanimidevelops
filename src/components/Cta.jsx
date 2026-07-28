@@ -10,7 +10,8 @@ const Cta = () => {
     subject: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const textToCopy = "oladojatolu@gmail.com";
 
@@ -29,14 +30,36 @@ const Cta = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here (e.g., API call, EmailJS, Formspree)
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ email: "", subject: "", message: "" });
-    }, 4000);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult("Sending...");
+
+    const formPayload = new FormData(event.target);
+    formPayload.append("access_key", "c136091e-2d84-4d32-9122-30ca1d2cc279");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formPayload,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Success!");
+        setFormData({ email: "", subject: "", message: "" });
+      } else {
+        console.error("Error from Web3Forms:", data);
+        setResult(data.message || "Error");
+      }
+    } catch (error) {
+      console.error("Submission failed:", error);
+      setResult("Error");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setResult(""), 4000);
+    }
   };
 
   const socialLinks = [
@@ -91,9 +114,9 @@ const Cta = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="grid grid-cols-12 gap-x-6 gap-y-4  border-t border-[#b0b0b5]/20 pt-6 md:pt-8"
+        className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-[#b0b0b5]/20 pt-6 md:pt-8"
       >
-        <div className="col-span-12 md:col-span-3 flex items-center   gap-3">
+        <div className="col-span-12 md:col-span-3 flex items-center gap-3">
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-blue-700 text-blue-700 font-primary text-[10px]">
             05
           </span>
@@ -129,7 +152,7 @@ const Cta = () => {
           className="col-span-12 lg:col-span-5 flex flex-col gap-1 "
         >
           {/* Direct Email */}
-          <div >
+          <div>
             <p className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em] mb-3">
               Direct
             </p>
@@ -150,15 +173,15 @@ const Cta = () => {
           </div>
 
           {/* Social Links */}
-          <div className="mt-4   ">
+          <div className="mt-4 ">
             <p className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em] mb-4">
               Elsewhere
             </p>
-            <div className="flex   flex-col gap-3">
+            <div className="flex flex-col gap-3">
               {socialLinks.map((link) => (
                 <div
                   key={link.label}
-                  className="grid grid-cols-12  items-center gap-2   "
+                  className="grid grid-cols-12 items-center gap-2 "
                 >
                   <span className="col-span-3 sm:col-span-2 font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em] ">
                     {link.label}
@@ -167,7 +190,7 @@ const Cta = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="col-span-9 sm:col-span-10  inline-flex items-center  text-white font-main text-base underline underline-offset-4 transition-colors"
+                    className="col-span-9 sm:col-span-10 inline-flex items-center text-white font-main text-base underline underline-offset-4 transition-colors"
                   >
                     <span className="truncate max-sm:text-sm">
                       {link.username}
@@ -183,12 +206,12 @@ const Cta = () => {
         {/* Right Column: Interactive Form */}
         <motion.div
           variants={itemVariants}
-          className="col-span-12   w-full lg:col-span-7 "
+          className="col-span-12 w-full lg:col-span-7 "
         >
           <form onSubmit={handleSubmit} className="flex flex-col w-full gap-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Email Input */}
-              <div className="flex w-full  flex-col gap-2">
+              <div className="flex w-full flex-col gap-2">
                 <label
                   htmlFor="email"
                   className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]"
@@ -203,12 +226,12 @@ const Cta = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="you@company.com"
-                  className="bg-transparent w-full  border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus: transition-colors font-main"
+                  className="bg-transparent w-full border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus: transition-colors font-main"
                 />
               </div>
 
               {/* Subject Input */}
-              <div className="flex w-full  flex-col gap-2">
+              <div className="flex w-full flex-col gap-2">
                 <label
                   htmlFor="subject"
                   className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]"
@@ -223,7 +246,7 @@ const Cta = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   placeholder="A role, a project, a hello"
-                  className="bg-transparent w-full  border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus: transition-colors font-main"
+                  className="bg-transparent w-full border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus: transition-colors font-main"
                 />
               </div>
             </div>
@@ -244,7 +267,7 @@ const Cta = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 placeholder="Tell me a bit about what you're working on."
-                className="bg-transparent w-full  border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus: transition-colors resize-none font-main"
+                className="bg-transparent w-full border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus: transition-colors resize-none font-main"
               ></textarea>
             </div>
 
@@ -252,9 +275,10 @@ const Cta = () => {
             <div className="mt-4">
               <button
                 type="submit"
-                className="cursor-pointer flex gap-3 justify-center items-center bg-blue-700 text-sm w-fit px-5 tracking-widest font-primary uppercase py-3 rounded-full"
+                disabled={isSubmitting}
+                className="cursor-pointer flex gap-3 justify-center items-center bg-blue-700 text-sm w-fit px-5 tracking-widest font-primary uppercase py-3 rounded-full text-white disabled:opacity-50"
               >
-                Submit
+                {result || "Submit"}
                 <IoIosArrowRoundForward size={20} />
               </button>
             </div>
