@@ -12,7 +12,7 @@ const QuickAction = () => {
       </h2>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         <a
-          className="bg-blue-700 group inline-flex items-center gap-2.5 rounded-full bg-flare px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-0 font-semibold hover:bg-flare-glow transition-colors"
+          className="bg-blue-700 group inline-flex items-center gap-2.5 rounded-full bg-flare px-6 py-3.5 font-primary text-[11px] uppercase tracking-[0.18em] text-ink-0 font-semibold hover:bg-flare-glow transition-colors"
           href="#contact"
         >
           Start a project
@@ -21,7 +21,7 @@ const QuickAction = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex text-[#b0b0b5] border-[#b0b0b5] items-center gap-2.5 rounded-full border border-ink-400 px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-900 hover:border-flare/60 hover:text-flare transition-colors"
+          className="inline-flex text-[#b0b0b5] border-[#b0b0b5] items-center gap-2.5 rounded-full border border-ink-400 px-6 py-3.5 font-primary text-[11px] uppercase tracking-[0.18em] text-ink-900 hover:border-flare/60 hover:text-flare transition-colors"
           href="https://wa.link/8v5ygy"
         >
           Chat on WhatsApp
