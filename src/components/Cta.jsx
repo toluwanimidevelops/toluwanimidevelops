@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { MdArrowOutward } from "react-icons/md";
 
 const Cta = () => {
   const [copied, setCopied] = useState(false);
@@ -83,16 +84,16 @@ const Cta = () => {
   };
 
   return (
-    <section id="work" className="mt-20 md:mt-36 max-w-7xl mx-auto ">
+    <section id="work" className="mt-20 md:mt-36 max-w-full mx-auto ">
       {/* Header Section */}
       <motion.header
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-[#b0b0b5]/20 pt-6 md:pt-8"
+        className="grid grid-cols-12 gap-x-6 gap-y-4  border-t border-[#b0b0b5]/20 pt-6 md:pt-8"
       >
-        <div className="col-span-12 md:col-span-3 flex items-center gap-3">
+        <div className="col-span-12 md:col-span-3 flex items-center   gap-3">
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-blue-700 text-blue-700 font-primary text-[10px]">
             05
           </span>
@@ -119,29 +120,29 @@ const Cta = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-12 gap-8 mt-10 md:mt-12 border-t border-[#b0b0b5]/20 pt-8 md:pt-12"
+        viewport={{ once: true }}
+        className="grid grid-cols-12 gap-8 max-md:gap-x-0 mt-10 md:mt-12 border-t border-[#b0b0b5]/20 pt-8 md:pt-12"
       >
         {/* Left Column: Direct Info & Social Links */}
         <motion.div
           variants={itemVariants}
-          className="col-span-12 lg:col-span-5 flex flex-col gap-8"
+          className="col-span-12 lg:col-span-5 flex flex-col gap-1 "
         >
           {/* Direct Email */}
-          <div>
+          <div >
             <p className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em] mb-3">
               Direct
             </p>
-            <div className="flex items-baseline gap-4 flex-wrap">
+            <div className="flex items-baseline gap-4 flex-wrap ">
               <a
                 href="mailto:oladojatolu@gmail.com"
-                className="font-secondary  text-white text-3xl max-sm:text-xl  underline underline-offset-8 hover:underline-offset-4 transition-all duration-300"
+                className="font-secondary text-white text-3xl max-sm:text-lg underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 break-all"
               >
                 oladojatolu@gmail.com
               </a>
               <button
                 onClick={handleCopy}
-                className="font-primary cursor-pointer text-[12px]  uppercase tracking-wider text-blue-700  transition-colors"
+                className="font-primary cursor-pointer text-[12px] uppercase tracking-wider text-blue-700 transition-colors shrink-0"
               >
                 {copied ? "Copied!" : "Copy"}
               </button>
@@ -149,26 +150,29 @@ const Cta = () => {
           </div>
 
           {/* Social Links */}
-          <div className="mt-4">
+          <div className="mt-4   ">
             <p className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em] mb-4">
               Elsewhere
             </p>
-            <div className="flex flex-col gap-3">
+            <div className="flex   flex-col gap-3">
               {socialLinks.map((link) => (
                 <div
                   key={link.label}
-                  className="grid grid-cols-12 items-center gap-2 max-w-md"
+                  className="grid grid-cols-12  items-center gap-2   "
                 >
-                  <span className="col-span-2 max-sm:col-span-3 font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]">
+                  <span className="col-span-3 sm:col-span-2 font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em] ">
                     {link.label}
                   </span>
                   <a
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="col-span-8 inline-flex items-center gap-1 text-white font-main text-base underline underline-offset-4  transition-colors w-fit"
+                    className="col-span-9 sm:col-span-10  inline-flex items-center  text-white font-main text-base underline underline-offset-4 transition-colors"
                   >
-                    {link.username} ↗
+                    <span className="truncate max-sm:text-sm">
+                      {link.username}
+                    </span>
+                    <MdArrowOutward size={20} />
                   </a>
                 </div>
               ))}
@@ -179,12 +183,12 @@ const Cta = () => {
         {/* Right Column: Interactive Form */}
         <motion.div
           variants={itemVariants}
-          className="col-span-12 max-w-full lg:col-span-7"
+          className="col-span-12   w-full lg:col-span-7 "
         >
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="flex flex-col w-full gap-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Email Input */}
-              <div className="flex flex-col gap-2">
+              <div className="flex w-full  flex-col gap-2">
                 <label
                   htmlFor="email"
                   className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]"
@@ -199,12 +203,12 @@ const Cta = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="you@company.com"
-                  className="bg-transparent border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus:border-white transition-colors max-w-full font-main"
+                  className="bg-transparent w-full  border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus: transition-colors font-main"
                 />
               </div>
 
               {/* Subject Input */}
-              <div className="flex flex-col gap-2">
+              <div className="flex w-full  flex-col gap-2">
                 <label
                   htmlFor="subject"
                   className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]"
@@ -219,13 +223,13 @@ const Cta = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   placeholder="A role, a project, a hello"
-                  className="bg-transparent border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus:border-white transition-colors font-main"
+                  className="bg-transparent w-full  border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus: transition-colors font-main"
                 />
               </div>
             </div>
 
             {/* Message Input */}
-            <div className="flex flex-col gap-2 mt-2">
+            <div className="flex flex-col gap-2 mt-2 ">
               <label
                 htmlFor="message"
                 className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]"
@@ -240,7 +244,7 @@ const Cta = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 placeholder="Tell me a bit about what you're working on."
-                className="bg-transparent border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus:border-white transition-colors resize-none font-main"
+                className="bg-transparent w-full  border-b border-[#b0b0b5]/30 pb-2 pt-1 text-white placeholder-[#b0b0b5]/40 focus:outline-none focus: transition-colors resize-none font-main"
               ></textarea>
             </div>
 
@@ -248,7 +252,7 @@ const Cta = () => {
             <div className="mt-4">
               <button
                 type="submit"
-                className="cursor-pointer flex gap-3 justify-center items-center  bg-blue-700 text-sm w-fit  px-5 tracking-widest font-primary uppercase py-3 rounded-full"
+                className="cursor-pointer flex gap-3 justify-center items-center bg-blue-700 text-sm w-fit px-5 tracking-widest font-primary uppercase py-3 rounded-full"
               >
                 Submit
                 <IoIosArrowRoundForward size={20} />
