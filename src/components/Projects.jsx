@@ -49,7 +49,7 @@ const ProjectCard = ({
       target="_blank"
       rel="noopener noreferrer"
       href={link}
-      className="w-full group overflow-hidden rounded-xl bg-gradient-to-b from-[#0f0f10] to-transparent border border-[#b0b0b5]/20 transition-all duration-500 hover:border-blue-700 hover:from-blue-600/10 hover:to-transparent cursor-pointer block"
+      className="w-full group overflow-hidden card cursor-pointer block"
     >
       <div className="w-full overflow-hidden relative h-[200px]">
         <div className="flex text-[#b0b0b5] absolute z-10 w-full p-2 justify-between">

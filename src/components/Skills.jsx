@@ -110,7 +110,7 @@ const SkillsChip = ({ text }) => {
   return (
     <motion.span
       variants={chipVariants}
-      className="font-primary text-nowrap rounded-full px-3 py-1 text-[14px]  text-[#b0b0b5] bg-gradient-to-b font-main from-[#0f0f10] to-transparent border border-[#b0b0b5]/20 transition-colors duration-300 hover:border-blue-700/20 hover:text-white hover:from-blue-600/10 cursor-pointer"
+      className="font-primary text-nowrap rounded-full px-3 py-1 text-[14px]  text-[#b0b0b5]  hover:text-white  card cursor-pointer"
     >
       {text}
     </motion.span>
@@ -121,7 +121,7 @@ const SkillCard = ({ title, number, list }) => {
   return (
     <motion.div
       variants={cardVariants}
-      className="bg-gradient-to-b from-[#0f0f10] to-transparent p-6 rounded-2xl border border-[#b0b0b5]/20 transition-all duration-500 hover:border-blue-700 hover:from-blue-600/10 hover:to-transparent cursor-pointer flex flex-col justify-between"
+      className="p-6 card cursor-pointer flex flex-col justify-between"
     >
       <div>
         <div className="flex justify-between items-center mb-3">

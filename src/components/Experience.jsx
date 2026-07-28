@@ -62,7 +62,7 @@ const ExperienceCard = ({
 }) => (
   <motion.li
     variants={fadeInUp}
-    className="card group grid grid-cols-12 gap-x-6 gap-y-2 items-baseline p-6 md:p-7 bg-gradient-to-b from-[#0f0f10] to-transparent rounded-xl border border-[#b0b0b5]/20 transition-all duration-500 hover:border-blue-700 hover:from-blue-600/20 hover:to-transparent cursor-pointer"
+    className="card group grid grid-cols-12 gap-x-6 gap-y-2 items-baseline p-6 md:p-7  cursor-pointer"
   >
     <div className="col-span-12 md:col-span-1 text-[11px] uppercase tracking-[0.2em] text-blue-700 font-primary">
       {number}

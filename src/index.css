@@ -101,7 +101,23 @@ body {
   scroll-behavior: smooth;
   font-family: var(--font-main);
 }
-
+.card {
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0.028),
+    hsla(0, 0%, 100%, 0.008)
+  );
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: 16px;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+.card:hover {
+    border-color: rgba(9, 32, 240, 0.4);
+    background: linear-gradient(180deg, rgba(0, 25, 254, 0.09), hsla(0, 0%, 100%, .01));
+}
 h1 {
   font-family: "SpaceGroteskSemiBold", sans-serif;
 }

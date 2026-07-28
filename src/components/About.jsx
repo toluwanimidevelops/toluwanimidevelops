@@ -73,7 +73,7 @@ const MetricCard = ({ label, value }) => (
 const ServiceCard = ({ number, title, description }) => (
   <motion.div
     variants={fadeInUp}
-    className="card group p-5 bg-gradient-to-b from-[#0f0f10] to-transparent rounded-xl border border-[#b0b0b5]/20 transition-all duration-500 hover:border-blue-700 hover:from-blue-600/20 hover:to-transparent cursor-pointer"
+    className="card group p-5  cursor-pointer"
   >
     <div className="flex items-start gap-4">
       <span className="mt-0.5 font-primary text-[11px] text-blue-700">

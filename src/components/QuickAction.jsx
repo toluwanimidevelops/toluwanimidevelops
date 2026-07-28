@@ -3,7 +3,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 const QuickAction = () => {
   return (
-    <div className="card cursor-pointer w-full  p-6 sm:p-8 md:p-12 text-center bg-gradient-to-b from-[#0f0f10] to-transparent rounded-xl border border-[#b0b0b5]/20 transition-all duration-500 hover:border-blue-700 hover:from-blue-600/20 hover:to-transparent">
+    <div className="card cursor-pointer w-full  p-6 sm:p-8 md:p-12 text-center ">
       <p className="font-primary text-blue-700 text-[11px] uppercase tracking-[0.22em] text-flare">
         Let's build something
       </p>

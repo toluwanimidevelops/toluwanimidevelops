@@ -29,7 +29,7 @@ const HowItWorksCard = ({ number, title, subTitle }) => {
     <motion.div
       variants={itemVariants}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className="w-full p-7 max-md:gap-5 gap-10 rounded-2xl bg-gradient-to-b from-[#0f0f10] to-transparent border border-[#b0b0b5]/20 transition-all duration-500 hover:border-blue-700 hover:from-blue-600/20 hover:to-transparent cursor-pointer flex"
+      className="w-full p-7 max-md:gap-5 gap-10 card cursor-pointer flex"
     >
       <h1 className="text-2xl max-md:text-xl font-primary text-blue-700">
         {number}
