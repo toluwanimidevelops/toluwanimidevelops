@@ -131,6 +131,15 @@ const Project = () => {
         className="md:grid-cols-2 my-15 gap-4 grid-cols-1 grid"
       >
         <ProjectCard
+          img="/ogcrystal.png"
+          year="2026"
+          thing="Engineer & Designer"
+          title="Og Crystal"
+          link="https://www.ogcrystalservices.com/"
+          description="Designed, built, and deployed a HR "
+          languages={["React", "MongoDB", "SMTP", "Express.js", "Node.js"]}
+        />
+        <ProjectCard
           img="/encounterroom.png"
           year="2026"
           thing="Engineer & Designer"
