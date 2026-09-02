@@ -53,7 +53,7 @@ const Footer = () => {
       </div>
       <div className="col-span-12 text-[#b0b0b5]/40 flex flex-wrap items-center justify-between gap-3 border-t border-ink-400/60 pt-5 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-600">
         <span>
-          © 2026 Toluwanimi Oladoja Goodness · Crazy Codes. All rights reserved.
+          © 2026 Toluwanimi Oladoja Goodness · Toluwanimi Develops. All rights reserved.
         </span>
         <span>Built with React.js · Lagos, NG</span>
       </div>
