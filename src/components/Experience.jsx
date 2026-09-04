@@ -29,7 +29,7 @@ const EXPERIENCES = [
     company: "Northsnow Ltd Uk",
     description:
       "Developed scalable MERN stack web apps, built cross-platform React Native mobile apps, and integrated secure RESTful APIs in an agile remote environment.",
-    period: "Jan 2026 — Present",
+    period: "Jan 2026 — Jun 2026",
     type: "Remote",
   },
   {

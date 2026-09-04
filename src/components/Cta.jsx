@@ -118,7 +118,7 @@ const Cta = () => {
       >
         <div className="col-span-12 md:col-span-3 flex items-center gap-3">
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-blue-700 text-blue-700 font-primary text-[10px]">
-            05
+            06
           </span>
           <span className="font-primary text-[#b0b0b5] text-[11px] uppercase tracking-[0.2em]">
             Contact Us

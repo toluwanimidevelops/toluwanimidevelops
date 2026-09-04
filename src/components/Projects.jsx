@@ -137,7 +137,7 @@ const Project = () => {
           title="Og Crystal"
           link="https://www.ogcrystalservices.com/"
           description="Designed, built, and deployed a HR "
-          languages={["React", "MongoDB", "SMTP", "Express.js", "Node.js"]}
+          languages={["Next.js", "MongoDB", "SMTP", "Express.js", "Node.js"]}
         />
         <ProjectCard
           img="/encounterroom.png"

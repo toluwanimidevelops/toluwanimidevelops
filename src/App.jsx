@@ -11,6 +11,7 @@ import Cta from "./components/Cta";
 import QuickAction from "./components/QuickAction";
 import { motion } from "framer-motion";
 import Footer from "./components/Footer";
+import Pricing from "./components/Pricing";
 const App = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const App = () => {
           <HowIWork />
           <Skills />
           <Project />
+          <Pricing />
           <Cta />
         </div>
         <motion.header

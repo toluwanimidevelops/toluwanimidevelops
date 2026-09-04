@@ -129,7 +129,7 @@ const Header = () => {
           className="border max-w-4xl my-8 w-full border-[#b0b0b5]/20 overflow-hidden  rounded-lg min-h-24 flex flex-wrap justify-between"
         >
           <div className="flex-1 gap-1 flex flex-col justify-center h-24 p-3  border border-[#b0b0b5]/20">
-            <Counter value="34+" className="text-white text-3xl" />
+            <Counter value="22+" className="text-white text-3xl" />
             <p className="font-primary text-[#b0b0b5] text-[11px] tracking-widest uppercase">
               Project Shipped
             </p>

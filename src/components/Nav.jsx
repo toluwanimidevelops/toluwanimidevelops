@@ -7,6 +7,7 @@ const Nav = ({ children }) => {
     { name: "Work", path: "/#work" },
     { name: "Stack", path: "/#stack" },
     { name: "Projects", path: "/#project" },
+    { name: "Pricing", path: "/#pricing" },
     { name: "Contact", path: "/#contact" },
   ];
 

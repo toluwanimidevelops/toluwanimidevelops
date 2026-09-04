@@ -115,9 +115,22 @@ body {
     background 0.3s ease;
 }
 .card:hover {
-    border-color: rgba(9, 32, 240, 0.4);
-    background: linear-gradient(180deg, rgba(0, 25, 254, 0.09), hsla(0, 0%, 100%, .01));
+  border-color: rgba(9, 32, 240, 0.4);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 25, 254, 0.09),
+    hsla(0, 0%, 100%, 0.01)
+  );
 }
 h1 {
   font-family: "SpaceGroteskSemiBold", sans-serif;
+}
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none !important;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none !important; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+  }
 }
