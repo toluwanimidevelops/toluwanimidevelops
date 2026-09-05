@@ -24,7 +24,6 @@ const AfterLaunch = () => {
           included: true,
         },
         { text: "Email support (48-hr response)", included: true },
-        
       ],
     },
     {
@@ -40,7 +39,10 @@ const AfterLaunch = () => {
           text: "Everthing in starter",
           included: true,
         },
-        { text: "Priority email & chat support (24-hr turnaround)", included: true },
+        {
+          text: "Priority email & chat support (24-hr turnaround)",
+          included: true,
+        },
         { text: "Bug resolution & UI adjustments", included: false },
         {
           text: "Speed, database & frontend performance tuning",
@@ -97,7 +99,7 @@ const AfterLaunch = () => {
 
   return (
     <>
-      <section id="after-launch" className=" px-4 py-20">
+      <section id="after-launch" className="  py-20">
         <div className="mx-auto flex max-w-6xl flex-col items-center">
           <div className="flex items-center gap-2 rounded-full border border-t-blue-700 bg-neutral-800 mb-5 px-5 py-2">
             <span className="size-1.5 rounded-full bg-blue-700"></span>
@@ -112,6 +114,10 @@ const AfterLaunch = () => {
               Plans
             </span>
           </h2>
+          <p className="font-primary text-[#b0b0b5] max-w-2xl text-center">
+            Every project includes a warranty period for bug fixes at launch.
+            Beyond that, these plans keep things running.
+          </p>
 
           <div className="mt-10 grid w-full max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {plans.map((plan) => (
@@ -143,6 +149,10 @@ const AfterLaunch = () => {
                   </p>
 
                   <button
+                    onClick={() => {
+                      window.location.href =
+                        "https://toluwanimidevelops.vercel.app/#contact";
+                    }}
                     className={`mt-6 flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-white cursor-pointer group ${plan.buttonClass}`}
                   >
                     GET STARTED

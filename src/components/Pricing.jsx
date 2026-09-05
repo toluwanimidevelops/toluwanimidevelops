@@ -83,7 +83,7 @@ const Pricing = () => {
                 />
                 <label
                   htmlFor={option.id}
-                  className="cursor-pointer text-center text-nowrap border hover:border-blue-700 border-[#0a0a0b] rounded-full py-3 px-6 font-primary text-[#b0b0b5] text-[11px] tracking-[0.2em] transition-colors duration-700 peer-checked:bg-blue-700 peer-checked:text-white hover:bg-blue-700 hover:text-white"
+                  className="cursor-pointer text-center whitespace-nowrap text-nowrap border hover:border-blue-700 border-[#0a0a0b] rounded-full py-3 px-6 font-primary text-[#b0b0b5] text-[11px] tracking-[0.2em] transition-colors duration-700 peer-checked:bg-blue-700 peer-checked:text-white hover:bg-blue-700 hover:text-white"
                 >
                   {option.label}
                 </label>
@@ -111,10 +111,10 @@ const Pricing = () => {
                 >
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-4">
-                      <h3 className="font-secondary text-lg text-white font-medium group-hover:text-blue-400 transition-colors duration-300">
+                      <h3 className="font-secondary text-lg text-white font-medium  transition-colors duration-300">
                         {service.name}
                       </h3>
-                      <MdArrowOutward className="text-xl text-[#b0b0b5] group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0" />
+                      <MdArrowOutward className="text-xl text-[#b0b0b5]  group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0" />
                     </div>
                   </div>
 
