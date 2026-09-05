@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Scrollable from "./components/Scrollable";
@@ -13,6 +13,27 @@ import { motion } from "framer-motion";
 import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
 const App = () => {
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        // Delay allows React and Framer Motion to mount the DOM first
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 300);
+      }
+    };
+
+    // 1. Run on initial direct page load (e.g. site.com/#about)
+    handleHashScroll();
+
+    // 2. Listen for URL hash changes when users click navigation links
+    window.addEventListener("hashchange", handleHashScroll);
+    return () => window.removeEventListener("hashchange", handleHashScroll);
+  }, []);
   return (
     <div>
       <Nav>
