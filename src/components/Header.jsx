@@ -84,7 +84,7 @@ const Header = () => {
         </motion.p>
         <motion.h1
           variants={itemVariants}
-          className=" font-secondary max-md:text-[32px] max-md:leading-7 text-[64px] font-semibold leading-16 text-white  max-w-2xl "
+          className=" font-secondary max-md:text-[32px] max-md:leading-7 text-[64px] font-semibold leading-16 text-white  max-w-2xl max-lg:max-w-xl "
         >
           I build products that solve real problems and{" "}
           <span className="text-blue-700">grow revenue.</span>
@@ -126,7 +126,7 @@ const Header = () => {
         </motion.div>
         <motion.div
           variants={itemVariants}
-          className="border max-w-4xl my-8 w-full border-[#b0b0b5]/20 overflow-hidden  rounded-lg min-h-24 flex flex-wrap justify-between"
+          className="border max-w-4xl max-lg:max-w-xl my-8 w-full border-[#b0b0b5]/20 overflow-hidden  rounded-lg min-h-24 flex flex-wrap justify-between"
         >
           <div className="flex-1 gap-1 flex flex-col justify-center h-24 p-3  border border-[#b0b0b5]/20">
             <Counter value="22+" className="text-white text-3xl" />
